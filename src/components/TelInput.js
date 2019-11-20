@@ -18,6 +18,7 @@ class TelInput extends Component {
         placeholder={ this.props.placeholder }
         onChange={ this.props.handleInputChange }
         onBlur={ this.props.handleOnBlur }
+        onFocus={ this.props.handleOnFocus }
         autoFocus={ this.props.autoFocus }
       />
     );
@@ -34,6 +35,7 @@ TelInput.propTypes = {
   placeholder: PropTypes.string,
   handleInputChange: PropTypes.func,
   handleOnBlur: PropTypes.func,
+  handleOnFocus: PropTypes.func,
   autoFocus: PropTypes.bool,
   autoComplete: PropTypes.string,
   inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
