@@ -66,6 +66,7 @@ class CountryList extends Component {
       };
       const countryClass = classNames(countryClassObj);
       const keyPrefix = isPreferred ? 'pref-' : '';
+      const isSelected = this.props.selectedCountryCode === country.iso2;
 
       return (
         <li
@@ -75,6 +76,10 @@ class CountryList extends Component {
           data-country-code={ country.iso2 }
           onMouseOver={ this.props.isMobile ? null : this.handleMouseOver }
           onClick={ partial(this.setFlag, country.iso2) }
+          role="option"
+          aria-selected={ isSelected }
+          id={ this.props.getItemId(actualIndex) }
+          tabIndex="-1"
         >
           <div
             ref={ (selectedFlag) => { this.selectedFlag = selectedFlag; } }
@@ -125,6 +130,8 @@ class CountryList extends Component {
       <ul
         ref={ (listElement) => { this.listElement = listElement; } }
         className={ className }
+        id={ this.props.countryListId }
+        role="listbox"
       >
         { preferredOptions }
         { divider }
@@ -144,6 +151,9 @@ CountryList.propTypes = {
   changeHighlightCountry: PropTypes.func,
   showDropdown: PropTypes.bool,
   isMobile: PropTypes.bool,
+  selectedCountryCode: PropTypes.string.isRequired,
+  countryListId: PropTypes.string.isRequired,
+  getItemId: PropTypes.func.isRequired,
 };
 
 export default CountryList;
