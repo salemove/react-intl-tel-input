@@ -91,7 +91,7 @@ class CountryList extends Component {
             />
           </div>
 
-          <span className="country-name">{ country.name }</span>
+          <span className="country-name" lang="en">{ country.name }</span>
           <span className="dial-code">+{ country.dialCode }</span>
         </li>
       );
