@@ -5,6 +5,8 @@ import CountryList from './CountryList';
 import RootModal from './RootModal';
 
 class FlagDropDown extends Component {
+  getItemId = (id) => `intl-tel-item-${this.props.uniqueId}-${id}`
+
   render() {
     const flagClassObj = {
       'iti-flag': true,
@@ -35,6 +37,8 @@ class FlagDropDown extends Component {
 
     let genCountryList = () => '';
 
+    const countryListId = `intl-tel-countries-list-${this.props.uniqueId}`;
+
     if (this.props.dropdownContainer) {
       if (this.props.showDropdown) {
         genCountryList = () =>
@@ -51,6 +55,9 @@ class FlagDropDown extends Component {
               preferredCountries={ this.props.preferredCountries }
               highlightedCountry={ this.props.highlightedCountry }
               changeHighlightCountry={ this.props.changeHighlightCountry }
+              selectedCountryCode={ this.props.countryCode }
+              countryListId={ countryListId }
+              getItemId={ this.getItemId }
             />
           </RootModal>;
       }
@@ -68,6 +75,9 @@ class FlagDropDown extends Component {
           preferredCountries={ this.props.preferredCountries }
           highlightedCountry={ this.props.highlightedCountry }
           changeHighlightCountry={ this.props.changeHighlightCountry }
+          selectedCountryCode={ this.props.countryCode }
+          countryListId={ countryListId }
+          getItemId={ this.getItemId }
         />;
     }
 
@@ -77,11 +87,17 @@ class FlagDropDown extends Component {
         className="flag-container"
       >
         <div
+          { ...this.props.flagDropdownProps }
           className="selected-flag"
           tabIndex={ this.props.allowDropdown ? '0' : '' }
           onClick={ this.props.clickSelectedFlag }
           onKeyDown={ this.props.handleSelectedFlagKeydown }
           title={ this.props.titleTip }
+          aria-controls={ countryListId }
+          aria-owns={ countryListId }
+          aria-autocomplete="none"
+          aria-activedescendant={ this.getItemId(this.props.highlightedCountry) }
+          aria-expanded={ this.props.showDropdown }
         >
           <div className={ flagClass } />
           { genSelectedDialCode() }
@@ -112,6 +128,8 @@ FlagDropDown.propTypes = {
   changeHighlightCountry: PropTypes.func,
   titleTip: PropTypes.string,
   refCallback: PropTypes.func.isRequired,
+  uniqueId: PropTypes.string.isRequired,
+  flagDropdownProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default FlagDropDown;

@@ -100,6 +100,8 @@ class IntlTelInputApp extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.changeHighlightCountry = this.changeHighlightCountry.bind(this);
     this.formatNumber = this.formatNumber.bind(this);
+    // using a unique Id not to interfere with other instances of the tel input
+    this.uniqueId = Math.random().toString(36).substring(2);
   }
 
   componentDidMount() {
@@ -1151,6 +1153,8 @@ class IntlTelInputApp extends Component {
           preferredCountries={ this.preferredCountries }
           highlightedCountry={ this.state.highlightedCountry }
           titleTip={ titleTip }
+          flagDropdownProps={ this.props.flagDropdownProps }
+          uniqueId={ this.uniqueId }
         />
         <TelInput
           refCallback={ this.setTelRef }
@@ -1210,6 +1214,7 @@ IntlTelInputApp.propTypes = {
   style: StylePropTypes,
   useMobileFullscreenDropdown: PropTypes.bool,
   telInputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  flagDropdownProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   format: PropTypes.bool,
 };
 
@@ -1261,6 +1266,8 @@ IntlTelInputApp.defaultProps = {
   autoComplete: 'off',
   // pass through arbitrary props to the tel input element
   telInputProps: {},
+  // pass through arbitrary props to the flag dropdown element
+  flagDropdownProps: {},
   // always format the number
   format: false,
 };
