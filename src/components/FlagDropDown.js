@@ -93,11 +93,11 @@ class FlagDropDown extends Component {
           onClick={ this.props.clickSelectedFlag }
           onKeyDown={ this.props.handleSelectedFlagKeydown }
           title={ this.props.titleTip }
+          role="combobox"
           aria-controls={ countryListId }
-          aria-owns={ countryListId }
-          aria-autocomplete="none"
           aria-activedescendant={ this.getItemId(this.props.highlightedCountry) }
           aria-expanded={ this.props.showDropdown }
+          aria-haspopup="listbox" // eslint-disable-line
         >
           <div className={ flagClass } />
           { genSelectedDialCode() }

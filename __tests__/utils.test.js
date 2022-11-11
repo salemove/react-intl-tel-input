@@ -110,7 +110,7 @@ describe('utils', () => {
 
   it('getCountryData', () => {
     const result = {
-      name: 'Taiwan (台灣)',
+      name: 'Taiwan',
       iso2: 'tw',
       dialCode: '886',
       priority: 0,

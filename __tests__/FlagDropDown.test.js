@@ -117,13 +117,13 @@ describe('FlagDropDown', function () { // eslint-disable-line func-names
     const flagComponent = subject.find(FlagDropDown);
 
     const result = [{
-      name: 'South Korea (대한민국)',
+      name: 'South Korea',
       iso2: 'kr',
       dialCode: '82',
       priority: 0,
       areaCodes: null,
     }, {
-      name: 'Taiwan (台灣)',
+      name: 'Taiwan',
       iso2: 'tw',
       dialCode: '886',
       priority: 0,
@@ -456,7 +456,7 @@ describe('FlagDropDown', function () { // eslint-disable-line func-names
 
     expect(expected).toEqual({
       currentNumber: '',
-      name: 'Japan (日本)',
+      name: 'Japan',
       iso2: 'jp',
       dialCode: '81',
       priority: 0,

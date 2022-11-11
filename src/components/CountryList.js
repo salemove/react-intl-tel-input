@@ -132,6 +132,7 @@ class CountryList extends Component {
         className={ className }
         id={ this.props.countryListId }
         role="listbox"
+        tabIndex="-1"
       >
         { preferredOptions }
         { divider }
