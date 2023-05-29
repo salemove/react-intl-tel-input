@@ -86,15 +86,15 @@ describe('FlagDropDown', function () { // eslint-disable-line func-names
     expect(flagComponent.find('.iti-flag.tw').first().length).toBeTruthy();
   });
 
-  it('should not has .hide class after clicking flag component', () => {
+  it('should not have .country-list--hidden class after clicking flag component', () => {
     const subject = this.makeSubject();
     const flagComponent = subject.find(FlagDropDown);
 
-    expect(subject.find(CountryList).find('.country-list.hide').length).toBeTruthy();
+    expect(subject.find(CountryList).find('.country-list.country-list--hidden').length).toBeTruthy();
     flagComponent.find('.selected-flag').simulate('click');
 
     subject.update();
-    expect(subject.find(CountryList).find('.country-list.hide').length).toBeFalsy();
+    expect(subject.find(CountryList).find('.country-list.country-list--hidden').length).toBeFalsy();
   });
 
   it('Simulate change to Japan flag in dropdown before & after', () => {

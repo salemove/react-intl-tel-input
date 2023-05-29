@@ -28,7 +28,7 @@ class CountryList extends Component {
   }
 
   setDropdownPosition() {
-    utils.removeClass(this.listElement, 'hide');
+    utils.removeClass(this.listElement, 'country-list--hidden');
 
     const inputTop = this.props.inputTop;
     const windowTop = (window.pageYOffset !== undefined) ?
@@ -113,7 +113,7 @@ class CountryList extends Component {
     const countries = this.props.countries;
     const className = classNames({
       'country-list': true,
-      hide: !this.props.showDropdown,
+      'country-list--hidden': !this.props.showDropdown,
     });
     let divider = null;
 
