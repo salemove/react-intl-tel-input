@@ -94,6 +94,12 @@
     "webpack-dev-server": "1.16.2",
     "xmlhttprequest": "^1.8.0"
   },
+  "resolutions": {
+    "fsevents": "~2.3.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "~2.3.2"
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "start": "node scripts/start.js",
