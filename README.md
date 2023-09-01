@@ -10,7 +10,6 @@
 
 Rewrite [International Telephone Input](https://github.com/jackocnr/intl-tel-input) in React.js.
 
-
 ## Collaborators Wanted!
 
 Due to the long commuting time, I have no much time to maintain this project often. 😣
@@ -40,7 +39,6 @@ yarn start
 
 Then open [`localhost:3000`](http://localhost:3000) in a browser.
 
-
 ## Installation
 
 The easiest way to use react-intl-tel-input is to install it from NPM and include it in your own React build process (using [Browserify](http://browserify.org), [Webpack](http://webpack.github.io/), etc).
@@ -57,16 +55,17 @@ or
 yarn add react-intl-tel-input
 ```
 
-
 ## Usage
 
 ```javascript
-import IntlTelInput from 'react-intl-tel-input';
-import 'file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js';
-import './node_modules/react-intl-tel-input/dist/main.css';
+import IntlTelInput from "react-intl-tel-input";
+import "file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js";
+import "./node_modules/react-intl-tel-input/dist/main.css";
 
-<IntlTelInput css={['intl-tel-input', 'form-control']}
-  utilsScript={'libphonenumber.js'} />
+<IntlTelInput
+  css={["intl-tel-input", "form-control"]}
+  utilsScript={"libphonenumber.js"}
+/>;
 ```
 
 ### Heads up: CSS Sourcemaps
@@ -80,7 +79,6 @@ Because of this, we recommend you disable sourcemaps for the CSS include in this
 ### Properties
 
 Please see the [Demo Page](http://patw0929.github.io/react-intl-tel-input/)
-
 
 ## Development (`src` and the build process)
 
@@ -119,7 +117,6 @@ yarn run lint
 ## Inspired by
 
 [International Telephone Input](https://github.com/jackocnr/intl-tel-input) - [@jackocnr](https://github.com/jackocnr)
-
 
 ## License
 
