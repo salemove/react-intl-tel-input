@@ -25,7 +25,7 @@
     "react-dom": ">15.4.2 <17.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
+    "classnames": "^2.5.1",
     "libphonenumber-js-utils": "^8.10.2",
     "prop-types": "^15.6.1",
     "react-style-proptype": "^3.0.0",
