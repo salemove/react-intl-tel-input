@@ -1,3 +1,11 @@
+> [!WARNING]
+> **⚠️ DEPRECATED — this repository is no longer maintained.**
+>
+> This fork of [patw0929/react-intl-tel-input](https://github.com/patw0929/react-intl-tel-input)
+> existed for internal consumers only. `glia-hub` has dropped it in favour of
+> `react-phone-number-input` (BROW-2634); the sole remaining consumer is `visitor-app`.
+> It will be archived once that consumer migrates off it. Do not add new dependencies on it.
+
 # React-Intl-Tel-Input
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
